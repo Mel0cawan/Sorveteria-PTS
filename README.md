@@ -3,11 +3,12 @@ Projeto da Sorveteria da Cadeira Projeto e Teste de Software
 
 ## Grupo
 - Cawan de Melo Santos
-- Ewerton Leonardo França de Souza Júnior 
-- Eduardo Young Woo Kim
+- Ewerton Leonardo França de Souza Júnior
+- João Lucas Camilo Ramos
 - Carol Barroso Cavalcanti de Albuquerque
 - Luciano Machado
 - João Victor Matos Brandão
+
 
 # Sorveteria
 # User Story 1: Cadastro de Clientes
