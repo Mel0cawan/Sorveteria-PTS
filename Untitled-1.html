@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto de Empresa</title>
+    <title>Projeto de Sorveteria</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css"> <!-- Arquivo CSS externo -->
@@ -14,7 +14,7 @@
 
     <!-- Topo -->
     <div class="header">
-        <img src="Img/Logo.jpg" alt="Logo"> <!-- Substitua pelo caminho da logo -->
+        <img src="Img/Logo.jpg" alt="Logo">
         <h1>Sabor Gelado</h1>
         <div class="working-hours">
             Seg á Dom - 08:00 - 18:00
@@ -23,43 +23,79 @@
 
     <!-- Meio - Menu -->
     <div class="container my-5">
-        <h2 class="text-center fw-bold">Conheça nosso menu!</h2> <!-- Adicionando a classe fw-bold para negrito -->
+        <h2 class="text-center fw-bold">Conheça nosso menu!</h2>
         <div class="row">
             <!-- Produto 1 -->
             <div class="col-md-6">
                 <div class="product d-flex justify-content-between align-items-center">
-                    <img src="Img/Pd1.png" alt="Produto 1" class="img-fluid"> <!-- Imagem do produto -->
+                    <img src="Img/Pd1.png" alt="Produto 1" class="img-fluid">
                     <div>
                         <h5>Morango com creme de paçoca</h5>
                         <p>Morangos frescos, creme suave e o toque crocante e doce da paçoca em perfeita harmonia.</p>
                         <p class="price">R$ 35,00</p>
                     </div>
+                    <!-- Botão de adicionar ao carrinho -->
                     <button class="add-to-cart-btn">
-                        <i class="bi bi-cart"></i> <!-- Ícone de carrinho -->
+                        <i class="bi bi-cart"></i> Adicionar
                     </button>
                 </div>
             </div>
             <!-- Produto 2 -->
             <div class="col-md-6">
                 <div class="product d-flex justify-content-between align-items-center">
-                    <img src="Img/Pd2.png" alt="Produto 2" class="img-fluid"> <!-- Imagem do produto -->
+                    <img src="Img/Pd2.png" alt="Produto 2" class="img-fluid">
                     <div>
                         <h5>Limão com abacate</h5>
                         <p>Um refrescante equilíbrio entre o azedinho do limão e a cremosidade do abacate.</p>
                         <p class="price">R$ 35,00</p>
                     </div>
+                    <!-- Botão de adicionar ao carrinho -->
                     <button class="add-to-cart-btn">
-                        <i class="bi bi-cart"></i> <!-- Ícone de carrinho -->
+                        <i class="bi bi-cart"></i> Adicionar
                     </button>
                 </div>
             </div>
-            <!-- Continue adicionando mais produtos conforme necessário -->
         </div>
     </div>
 
     <!-- Final - Botão de Carrinho -->
-    <div class="cart-btn">
+    <div class="cart-btn" data-bs-toggle="modal" data-bs-target="#cartModal">
         <i class="bi bi-cart"></i> Carrinho (0 itens)
+    </div>
+
+    <!-- Modal do Carrinho -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Carrinho de Compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="cartItems" class="list-group"></ul>
+                    <div class="mt-3">
+                        <label for="address" class="form-label">Endereço de Entrega</label>
+                        <input type="text" class="form-control" id="address" placeholder="Digite seu endereço">
+                    </div>
+                    <p><strong>Total: R$ <span id="totalPrice">0,00</span></strong></p>
+
+                    <!-- Forma de Pagamento -->
+                    <div class="mt-3">
+                        <label for="paymentMethod" class="form-label">Forma de Pagamento</label>
+                        <select class="form-select" id="paymentMethod">
+                            <option value="credit">Crédito/Débito</option>
+                            <option value="pix">PIX</option>
+                            <option value="cash">Dinheiro</option>
+                        </select>
+                    </div>
+                    <p><small><em>Pagamento apenas na entrega.</em></small></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="checkoutBtn">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap JS -->

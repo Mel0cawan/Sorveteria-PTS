@@ -1,23 +1,23 @@
 /* Estilo customizado */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 /* Topo */
-/* Estilos do Header */
 .header {
     position: relative;
-    background-image: url('Img/BG.jpg'); /* Substitua com o caminho correto da sua imagem */
-    background-size: cover; /* Garante que a imagem cubra todo o espaço */
-    background-position: center center; /* Centraliza o foco na imagem, tanto horizontalmente quanto verticalmente */
-    background-repeat: no-repeat; /* Garante que a imagem não se repita */
+    background-image: url('Img/BG.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     text-align: center;
     padding: 50px 0;
     color: white;
     z-index: 1;
 }
 
-/* Sobreposição escura */
 .header::before {
     content: '';
     position: absolute;
@@ -25,11 +25,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Sobreposição preta com 50% de opacidade */
-    z-index: -1; /* Garante que a sobreposição fique atrás do conteúdo */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
-/* Estilos da logo e do texto */
 .header img {
     width: 150px;
     height: 150px;
@@ -56,27 +55,22 @@ body {
     z-index: 2;
 }
 
-/* Se estiver fechado, altere a cor do background para vermelho */
-.closed .working-hours {
-    background-color: red;
-}
-
-/* Meio - Menu de Produtos */
+/* Produtos */
 .product {
     display: flex;
-    align-items: flex-start; /* Alinha o conteúdo ao topo */
+    align-items: flex-start;
     border: 1px solid #ddd;
     padding: 15px;
     margin-bottom: 20px;
     background-color: #fff;
     border-radius: 8px;
-    position: relative; /* Para permitir o posicionamento do botão */
+    position: relative;
 }
 
 .product img {
-    width: 150px; /* Aumenta o tamanho da imagem */
-    height: 150px; /* Aumenta o tamanho da imagem */
-    margin-right: 15px; /* Adiciona espaço à direita da imagem */
+    width: 150px;
+    height: 150px;
+    margin-right: 15px;
 }
 
 .product h5 {
@@ -95,36 +89,33 @@ body {
     color: #333;
 }
 
+/* Botão de adicionar ao carrinho */
 .add-to-cart-btn {
-    background-color: #000; /* Cor de fundo preta */
-    border: none; /* Remover borda */
-    color: white; /* Cor do ícone */
-    padding: 10px; /* Espaçamento interno */
-    border-radius: 8px; /* Bordas curvas */
-    font-size: 18px; /* Tamanho do ícone */
-    cursor: pointer; /* Apontar como botão clicável */
-    display: flex; /* Flexbox para centralizar o ícone */
-    justify-content: center; /* Centralizar horizontalmente */
-    align-items: center; /* Centralizar verticalmente */
-    width: 50px; /* Largura fixa para o botão */
-    height: 40px; /* Altura fixa */
-    transition: background-color 0.3s ease; /* Suavização da transição de cor */
-    position: absolute; /* Para permitir posicionamento absoluto */
-    bottom: 10px; /* Distância do fundo */
-    right: 10px; /* Distância do lado direito */
+    background-color: #000;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn i {
+    margin-right: 5px;
 }
 
 .add-to-cart-btn:hover {
-    background-color: #333; /* Mudança de cor ao passar o mouse */
+    background-color: #333;
 }
 
-/* Ajuste do ícone de carrinho */
-.add-to-cart-btn i {
-    font-size: 20px; /* Tamanho do ícone */
-    color: #fff; /* Cor branca para o ícone */
-}
-
-/* Final - Botão de Carrinho */
+/* Carrinho */
 .cart-btn {
     background-color: #007bff;
     color: white;
@@ -134,8 +125,54 @@ body {
     width: 100%;
     position: fixed;
     bottom: 0;
+    cursor: pointer;
 }
 
 .cart-btn i {
     margin-right: 10px;
 }
+
+/* Modal do Carrinho */
+.modal-body {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#paymentMethod {
+    margin-top: 10px;
+}
+
+#cartItems {
+    margin-bottom: 20px;
+}
+
+/* Modal Header */
+.modal-header {
+    border-bottom: 2px solid #007bff;
+}
+
+.modal-title {
+    color: #007bff;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-close {
+    color: #007bff;
+}
+
+/* Estilos adicionais */
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-group-item button {
+    margin-left: 10px;
+}
+
