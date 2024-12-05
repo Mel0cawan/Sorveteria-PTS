@@ -1,46 +1,46 @@
-/* Estilo para a logo */
-.logo {
-    display: block;
-    margin: 0 auto;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+    /* Estilo para a logo */
+    .logo {
+        display: block;
+        margin: 0 auto;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 
-/* Estilo para as abas */
-.nav-tabs {
-    margin-bottom: 20px;
-}
+    /* Estilo para as abas */
+    .nav-tabs {
+        margin-bottom: 20px;
+    }
 
-/* Estilo para o título principal */
-h1 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 30px;
-}
+    /* Estilo para o título principal */
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
 
-/* Estilo das tabelas */
-.table {
-    margin-top: 20px;
-}
+    /* Estilo das tabelas */
+    .table {
+        margin-top: 20px;
+    }
 
-/* Modal - estilo de botão */
-.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-}
+    /* Modal - estilo de botão */
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
 
-/* Ajuste para as colunas da tabela de estoque */
-#productsTable td:nth-child(5) {
-    width: 150px; /* Ajusta o tamanho da coluna de estoque */
-}
+    /* Ajuste para as colunas da tabela de estoque */
+    #productsTable td:nth-child(5) {
+        width: 150px; /* Ajusta o tamanho da coluna de estoque */
+    }
 
-#productsTable td:last-child {
-    width: 200px; /* Ajusta a largura da coluna de ações */
-}
+    #productsTable td:last-child {
+        width: 200px; /* Ajusta a largura da coluna de ações */
+    }
 
-/* Estilo para os botões de ações */
-#productsTable .btn {
-    margin-right: 5px;
-}
+    /* Estilo para os botões de ações */
+    #productsTable .btn {
+        margin-right: 5px;
+    }

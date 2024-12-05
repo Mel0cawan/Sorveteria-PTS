@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciamento de Estoque e Clientes</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/Css/gerenciamento.css"> <!-- Link para o CSS externo -->
+    <link rel="stylesheet" href="/Css/gerenciamento.css">
 </head>
 <body>
     <div class="container mt-5">
-        <!-- Logo acima do título -->
         <img src="/Img/Logo.jpg" alt="Logo da Empresa" class="logo mb-3">
-        
         <h1 class="text-center">Gerenciamento de Estoque e Clientes</h1>
         
         <ul class="nav nav-tabs" id="managementTabs">
@@ -24,7 +22,6 @@
         </ul>
 
         <div class="tab-content mt-3">
-            <!-- Aba de Gerenciamento de Clientes -->
             <div id="clientes" class="tab-pane active">
                 <h3>Gerenciamento de Clientes</h3>
                 <button class="btn btn-primary mb-3" id="addClientBtn">Adicionar Cliente</button>
@@ -37,17 +34,13 @@
                             <th>Telefone</th>
                             <th>Email</th>
                             <th>Método de Pagamento</th>
-                            <th>Senha</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
-                    <tbody id="clientsTable">
-                        <!-- Linhas dinâmicas serão inseridas aqui -->
-                    </tbody>
+                    <tbody id="clientsTable"></tbody>
                 </table>
             </div>
 
-            <!-- Aba de Gerenciamento de Estoque -->
             <div id="estoque" class="tab-pane fade">
                 <h3>Gerenciamento de Estoque</h3>
                 <button class="btn btn-primary mb-3" id="addProductBtn">Adicionar Produto</button>
@@ -62,16 +55,12 @@
                             <th>Ações</th>
                         </tr>
                     </thead>
-                    <tbody id="productsTable">
-                        <!-- Linhas dinâmicas serão inseridas aqui -->
-                    </tbody>
+                    <tbody id="productsTable"></tbody>
                 </table>
             </div>
         </div>
     </div>
 
-    <!-- Modais -->
-    <!-- Modal Cliente -->
     <div class="modal fade" id="clientModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -88,7 +77,7 @@
                         </div>
                         <div class="form-group">
                             <label for="clientCPF">CPF</label>
-                            <input type="text" class="form-control" id="clientCPF" required>
+                            <input type="text" class="form-control" id="clientCPF" required pattern="\d{11}">
                         </div>
                         <div class="form-group">
                             <label for="clientAddress">Endereço</label>
@@ -96,18 +85,14 @@
                         </div>
                         <div class="form-group">
                             <label for="clientPhone">Telefone</label>
-                            <input type="text" class="form-control" id="clientPhone" required>
+                            <input type="text" class="form-control" id="clientPhone" required pattern="\d{10,11}" placeholder="Digite o telefone (apenas números)">
                         </div>
                         <div class="form-group">
                             <label for="clientEmail">Email</label>
                             <input type="email" class="form-control" id="clientEmail" required>
                         </div>
                         <div class="form-group">
-                            <label for="clientPassword">Senha</label>
-                            <input type="password" class="form-control" id="clientPassword" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="clientPayment">Método de Pagamento</label>
+                            <label for="clientPayment">Pagamento</label>
                             <select class="form-control" id="clientPayment" required>
                                 <option value="Cartão de Crédito">Cartão de Crédito</option>
                                 <option value="Boleto">Boleto</option>
@@ -121,7 +106,6 @@
         </div>
     </div>
 
-    <!-- Modal Produto -->
     <div class="modal fade" id="productModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -149,8 +133,8 @@
                             <input type="number" class="form-control" id="productStock" required>
                         </div>
                         <div class="form-group">
-                            <label for="productLactose">Intolerante à Lactose</label>
-                            <select class="form-control" id="productLactose">
+                            <label for="productLactose">Lactose</label>
+                            <select class="form-control" id="productLactose" required>
                                 <option value="Sim">Sim</option>
                                 <option value="Não">Não</option>
                             </select>
