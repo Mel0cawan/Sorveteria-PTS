@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Estoque e Clientes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Css/gerenciamento.css"> <!-- Link para o CSS externo -->
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Logo acima do título -->
+        <img src="/Img/Logo.jpg" alt="Logo da Empresa" class="logo mb-3">
+        
+        <h1 class="text-center">Gerenciamento de Estoque e Clientes</h1>
+        
+        <ul class="nav nav-tabs" id="managementTabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#clientes">Clientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#estoque">Estoque</a>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-3">
+            <!-- Aba de Gerenciamento de Clientes -->
+            <div id="clientes" class="tab-pane active">
+                <h3>Gerenciamento de Clientes</h3>
+                <button class="btn btn-primary mb-3" id="addClientBtn">Adicionar Cliente</button>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Endereço</th>
+                            <th>Telefone</th>
+                            <th>Email</th>
+                            <th>Método de Pagamento</th>
+                            <th>Senha</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clientsTable">
+                        <!-- Linhas dinâmicas serão inseridas aqui -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Aba de Gerenciamento de Estoque -->
+            <div id="estoque" class="tab-pane fade">
+                <h3>Gerenciamento de Estoque</h3>
+                <button class="btn btn-primary mb-3" id="addProductBtn">Adicionar Produto</button>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Sabor</th>
+                            <th>Preço</th>
+                            <th>Intolerante à Lactose</th>
+                            <th>Estoque</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTable">
+                        <!-- Linhas dinâmicas serão inseridas aqui -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modais -->
+    <!-- Modal Cliente -->
+    <div class="modal fade" id="clientModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Cliente</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="clientForm">
+                        <input type="hidden" id="clientIndex">
+                        <div class="form-group">
+                            <label for="clientName">Nome</label>
+                            <input type="text" class="form-control" id="clientName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientCPF">CPF</label>
+                            <input type="text" class="form-control" id="clientCPF" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientAddress">Endereço</label>
+                            <input type="text" class="form-control" id="clientAddress" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientPhone">Telefone</label>
+                            <input type="text" class="form-control" id="clientPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientEmail">Email</label>
+                            <input type="email" class="form-control" id="clientEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientPassword">Senha</label>
+                            <input type="password" class="form-control" id="clientPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientPayment">Método de Pagamento</label>
+                            <select class="form-control" id="clientPayment" required>
+                                <option value="Cartão de Crédito">Cartão de Crédito</option>
+                                <option value="Boleto">Boleto</option>
+                                <option value="Pix">Pix</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Produto -->
+    <div class="modal fade" id="productModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Produto</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="productForm">
+                        <input type="hidden" id="productIndex">
+                        <div class="form-group">
+                            <label for="productName">Nome</label>
+                            <input type="text" class="form-control" id="productName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productFlavor">Sabor</label>
+                            <input type="text" class="form-control" id="productFlavor" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productPrice">Preço</label>
+                            <input type="number" class="form-control" id="productPrice" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productStock">Estoque</label>
+                            <input type="number" class="form-control" id="productStock" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="productLactose">Intolerante à Lactose</label>
+                            <select class="form-control" id="productLactose">
+                                <option value="Sim">Sim</option>
+                                <option value="Não">Não</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/Js/gerenciamento.js"></script>
+</body>
+</html>
