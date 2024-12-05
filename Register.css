@@ -72,6 +72,15 @@
     text-align: center;
 }
 
+/* Estilo para a mensagem de erro */
+#errorMessage {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .d-flex {

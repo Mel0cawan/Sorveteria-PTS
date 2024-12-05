@@ -47,6 +47,11 @@
                         Registro realizado com sucesso!
                     </div>
                     
+                    <!-- Mensagem de Erro (inicialmente oculta) -->
+                    <div id="errorMessage" class="alert alert-danger mt-3 d-none" role="alert">
+                        Credenciais inválidas! Tente novamente.
+                    </div>
+
                     <div class="text-center mt-3">
                         <a href="#" id="switchToLogin">Já possui conta? Faça login</a>
                     </div>
@@ -55,7 +60,7 @@
 
             <div id="loginForm" class="form-section d-none">
                 <h2 class="text-center mb-4">Login</h2>
-                <form>
+                <form id="loginFormElement">
                     <div class="mb-3">
                         <label for="loginEmail" class="form-label">Email</label>
                         <input type="email" class="form-control" id="loginEmail" placeholder="Digite seu email" required>
