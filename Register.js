@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const successMessage = document.getElementById('successMessage'); // Mensagem de sucesso
     const errorMessage = document.getElementById('errorMessage'); // Mensagem de erro
     const loginFormElement = document.getElementById('loginFormElement'); // Formulário de login
+    const loginError = document.getElementById('loginError'); // Mensagem de erro no login
 
     // Manipular envio do formulário de registro
     registerFormElement.addEventListener('submit', (e) => {
@@ -47,20 +48,23 @@ document.addEventListener('DOMContentLoaded', function () {
     loginFormElement.addEventListener('submit', (e) => {
         e.preventDefault(); // Evitar recarregar a página
 
-        // Coletar dados de login
-        const loginEmail = document.getElementById('loginEmail').value;
-        const loginPassword = document.getElementById('loginPassword').value;
+        // Coletar dados do formulário
+        const formData = new FormData(loginFormElement);
+        const email = formData.get('email');
+        const password = formData.get('password');
 
-        const storedUserData = JSON.parse(localStorage.getItem('userData'));
+        // Verificar se as credenciais estão corretas
+        const userData = JSON.parse(localStorage.getItem('userData'));
 
-        // Verificar se os dados de login são válidos
-        if (storedUserData && storedUserData.email === loginEmail && storedUserData.password === loginPassword) {
-            // Redirecionar para a página principal após login bem-sucedido
-            window.location.href = 'index.html'; // Redireciona para a página index.html
+        // Garantir que os dados de userData existem e não são nulos
+        if (userData && userData.email === email && userData.password === password) {
+            alert('Login bem-sucedido!');
+            window.location.href = "index.html"; // Redireciona para o painel de controle após login
         } else {
-            // Exibir mensagem de erro abaixo do botão de login
-            errorMessage.textContent = "E-mail ou senha inválidos. Tente novamente."; // Mensagem de erro
-            errorMessage.classList.remove('d-none'); // Mostrar mensagem de erro
+            // Exibir erro caso as credenciais sejam inválidas
+            loginError.classList.remove('d-none'); // Exibir mensagem de erro
+            loginError.textContent = 'Credenciais incorretas!'; // Mensagem de erro específica
+            successMessage.classList.add('d-none'); // Esconder mensagem de sucesso
         }
     });
 });
