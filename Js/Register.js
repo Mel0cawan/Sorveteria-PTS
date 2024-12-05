@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Coletar dados do formulário
         const formData = new FormData(loginFormElement);
-        const email = formData.get('email');
-        const password = formData.get('password');
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;; // Corrigido para loginPassword
 
         // Verificar se as credenciais estão corretas
         const userData = JSON.parse(localStorage.getItem('userData'));
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Garantir que os dados de userData existem e não são nulos
         if (userData && userData.email === email && userData.password === password) {
             alert('Login bem-sucedido!');
-            window.location.href = "index.html"; // Redireciona para o painel de controle após login
+            window.location.href = "/html/index.html"; // Redireciona para o painel de controle após login
         } else {
             // Exibir erro caso as credenciais sejam inválidas
             loginError.classList.remove('d-none'); // Exibir mensagem de erro
