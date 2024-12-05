@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro e Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Register.css">
+</head>
+<body>
+    <div class="d-flex vh-100">
+        <!-- Lado esquerdo: Background e logo -->
+        <div class="left-side d-flex flex-column justify-content-center align-items-center text-center">
+            <img src="Img/Logo.jpg" alt="Logo da Sorveteria" class="rounded-circle mb-4">
+            <h1 class="text-white">Sabor Gelado</h1>
+        </div>
+
+        <!-- Lado direito: Formulário -->
+        <div class="right-side p-5">
+            <div id="registerForm" class="form-section">
+                <h2 class="text-center mb-4">Registro</h2>
+                <form id="registerFormElement">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cpf" class="form-label">CPF</label>
+                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Telefone</label>
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Digite seu telefone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Registrar</button>
+                    
+                    <!-- Mensagem de Sucesso (inicialmente oculta) -->
+                    <div id="successMessage" class="alert alert-success mt-3 d-none" role="alert">
+                        Registro realizado com sucesso!
+                    </div>
+                    
+                    <div class="text-center mt-3">
+                        <a href="#" id="switchToLogin">Já possui conta? Faça login</a>
+                    </div>
+                </form>
+            </div>
+
+            <div id="loginForm" class="form-section d-none">
+                <h2 class="text-center mb-4">Login</h2>
+                <form>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="Digite seu email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="loginPassword" placeholder="Digite sua senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Entrar</button>
+                    <div class="text-center mt-3">
+                        <a href="#" id="switchToRegister">Não possui conta? Registre-se</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Link para o arquivo JavaScript -->
+    <script src="Register.js"></script>
+</body>
+</html>

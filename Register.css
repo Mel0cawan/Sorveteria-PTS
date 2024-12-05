@@ -1,0 +1,85 @@
+/* Estilo para o lado esquerdo */
+.left-side {
+    background-image: url('Img/BG.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    flex: 1; /* Mantém o lado esquerdo com 50% do layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.left-side img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.left-side h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Estilo para o lado direito */
+.right-side {
+    flex: 1; /* A largura da área de registro */
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f8f9fa;
+}
+
+/* Estilo para as seções de formulário */
+.form-section {
+    max-width: 600px; /* Largura máxima para o formulário */
+    margin: 0 auto;
+    width: 100%; /* Garantir que ocupe 100% da largura disponível */
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h2 {
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Ajusta os links */
+.form-section a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.form-section a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para a mensagem de sucesso */
+#successMessage {
+    color: green;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .left-side, .right-side {
+        flex: none;
+        width: 100%;
+    }
+}
